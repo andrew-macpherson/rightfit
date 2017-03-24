@@ -1,0 +1,55 @@
+# Logs
+logs
+*.log
+npm-debug.log*
+
+# Runtime data
+pids
+*.pid
+*.seed
+*.pid.lock
+
+
+# Grunt intermediate storage (http://gruntjs.com/creating-plugins#storing-task-files)
+.grunt
+
+# node-waf configuration
+.lock-wscript
+
+# Compiled binary addons (http://nodejs.org/api/addons.html)
+build/Release
+
+# Dependency directories
+node_modules
+
+# Optional npm cache directory
+.npm
+
+# Mac
+.DS_Store
+
+# iOS
+app/platforms/ios/build/
+app/platforms/ios/www/
+app/platforms/ios/cordova/console.log
+app/platforms/ios/cordova/build-extras.xcconfig
+platforms/ios/cordova/build-extras.xcconfig
+*.xcuserdatad
+
+# android
+app/platforms/android/assets/www
+app/platforms/android/bin
+app/platforms/android/gen
+app/platforms/android/local.properties
+app/platforms/android/ant-build
+app/platforms/android/ant-gen
+app/platforms/android/CordovaLib/ant-build
+app/platforms/android/CordovaLib/ant-gen
+app/platforms/android/CordovaLib/bin
+app/platforms/android/CordovaLib/gen
+app/platforms/android/CordovaLib/local.properties
+app/platforms/android/.gradle
+
+# browser
+app/platforms/browser/www/
+app/platforms/browser/build
