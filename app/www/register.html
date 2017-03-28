@@ -1,0 +1,116 @@
+<!-- We don't need full layout here, because this page will be parsed with Ajax-->
+<!-- Top Navbar-->
+<div class="navbar">
+    <div class="navbar-inner">
+        <div class="left"><a href="#" class="back link"> <i class="icon icon-back"></i><span>Back</span></a></div>
+        <div class="center sliding">Registration</div>
+        <div class="right">
+            <!-- Right link contains only icon - additional "icon-only" class--><a href="#" class="link icon-only open-panel"> <i class="icon icon-bars"></i></a>
+        </div>
+    </div>
+</div>
+<!-- Pages, because we need fixed-through navbar and toolbar, it has additional appropriate classes-->
+<div class="pages navbar-through toolbar-through">
+    <!-- Page, data-page contains page name-->
+    <div data-page="index" class="page">
+        <!-- Scrollable page content-->
+        <div class="page-content">
+            <div class="content-block-title">Register</div>
+            <div class="content-block">
+                <div class="content-block-inner">
+                    <p>Some content about registration if needed.</p>
+                </div>
+            </div>
+            <div class="list-block">
+                <ul>
+                    <li>
+                        <div class="item-content">
+                            <div class="item-inner">
+                                <div class="item-title label">First Name: </div>
+                                <div class="item-inner">
+                                    <input type="text" name="first_name" placeholder="First" />
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="item-content">
+                            <div class="item-inner">
+                                <div class="item-title label">Last Name: </div>
+                                <div class="item-inner">
+                                    <input type="text" name="last_name" placeholder="Last" />
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="item-content">
+                            <div class="item-inner">
+                                <div class="item-title label">Email: </div>
+                                <div class="item-inner">
+                                    <input type="text" name="email" placeholder="youremail@email.com" />
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="item-content">
+                            <div class="item-inner">
+                                <div class="item-title label">Password: </div>
+                                <div class="item-inner">
+                                    <input type="password" placeholder="Password" />
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <div class="content-block">
+                <div class="row">
+                    <div class="col-50">
+                        <input type="submit" value="Register Now" class="button button-big button-fill color-green"/>
+                    </div>
+                    <div class="col-50"><a href="index.html" class="button button-big button-fill color-red">Cancel</a></div>
+                </div>
+            </div>
+
+            <!--
+            <div class="list-block">
+            <ul>
+              <li><a href="about.html" class="item-link">
+                  <div class="item-content">
+                    <div class="item-inner">
+                      <div class="item-title">About</div>
+                    </div>
+                  </div></a></li>
+              <li><a href="services.html" class="item-link">
+                  <div class="item-content">
+                    <div class="item-inner">
+                      <div class="item-title">Services</div>
+                    </div>
+                  </div></a></li>
+              <li><a href="form.html" class="item-link">
+                  <div class="item-content">
+                    <div class="item-inner">
+                      <div class="item-title">Form</div>
+                    </div>
+                  </div></a></li>
+            </ul>
+          </div>
+          -->
+
+
+            <!--
+          <div class="content-block-title">Side panels</div>
+          <div class="content-block">
+            <div class="row">
+              <div class="col-50"><a href="#" data-panel="left" class="button open-panel">Left Panel</a></div>
+              <div class="col-50"><a href="#" data-panel="right" class="button open-panel">Right Panel</a></div>
+            </div>
+          </div>
+          -->
+
+
+        </div>
+    </div>
+</div>
