@@ -21,58 +21,61 @@
                     <p>Some content about registration if needed.</p>
                 </div>
             </div>
-            <div class="list-block">
-                <ul>
-                    <li>
-                        <div class="item-content">
-                            <div class="item-inner">
-                                <div class="item-title label">First Name: </div>
+
+            <form class="regitration-form ajax-submit" action="http://localhost:3000/api/Users" method="POST" enctype="application/json">
+                <div class="list-block">
+                    <ul>
+                        <li>
+                            <div class="item-content">
                                 <div class="item-inner">
-                                    <input type="text" name="first_name" placeholder="First" />
+                                    <div class="item-title label">First Name: </div>
+                                    <div class="item-inner">
+                                        <input type="text" name="first_name" placeholder="First" />
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="item-content">
-                            <div class="item-inner">
-                                <div class="item-title label">Last Name: </div>
+                        </li>
+                        <li>
+                            <div class="item-content">
                                 <div class="item-inner">
-                                    <input type="text" name="last_name" placeholder="Last" />
+                                    <div class="item-title label">Last Name: </div>
+                                    <div class="item-inner">
+                                        <input type="text" name="last_name" placeholder="Last" />
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="item-content">
-                            <div class="item-inner">
-                                <div class="item-title label">Email: </div>
+                        </li>
+                        <li>
+                            <div class="item-content">
                                 <div class="item-inner">
-                                    <input type="text" name="email" placeholder="youremail@email.com" />
+                                    <div class="item-title label">Email: </div>
+                                    <div class="item-inner">
+                                        <input type="text" name="email" placeholder="youremail@email.com" />
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="item-content">
-                            <div class="item-inner">
-                                <div class="item-title label">Password: </div>
+                        </li>
+                        <li>
+                            <div class="item-content">
                                 <div class="item-inner">
-                                    <input type="password" placeholder="Password" />
+                                    <div class="item-title label">Password: </div>
+                                    <div class="item-inner">
+                                        <input type="password" name="password" placeholder="Password" />
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                    </li>
-                </ul>
-            </div>
-            <div class="content-block">
-                <div class="row">
-                    <div class="col-50">
-                        <input type="submit" value="Register Now" class="button button-big button-fill color-green"/>
-                    </div>
-                    <div class="col-50"><a href="index.html" class="button button-big button-fill color-red">Cancel</a></div>
+                        </li>
+                    </ul>
                 </div>
-            </div>
+                <div class="content-block">
+                    <div class="row">
+                        <div class="col-50">
+                            <input type="submit" value="Register Now" class="button button-big button-fill color-green"/>
+                        </div>
+                        <div class="col-50"><a href="index.html" class="button button-big button-fill color-red">Cancel</a></div>
+                    </div>
+                </div>
+            </form>
 
             <!--
             <div class="list-block">

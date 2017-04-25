@@ -39,6 +39,7 @@ platforms/ios/cordova/build-extras.xcconfig
 # android
 app/platforms/android/assets/www
 app/platforms/android/bin
+app/platforms/android/build
 app/platforms/android/gen
 app/platforms/android/local.properties
 app/platforms/android/ant-build
