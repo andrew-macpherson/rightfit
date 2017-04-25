@@ -1,0 +1,16 @@
+{
+  "name": "rightFit",
+  "version": "0.1.0",
+  "author": "Andrew MacPherson",
+  "private": true,
+  "license": "UNLICENSED",
+  "devDependencies": {
+    "grunt": "^1.0.1",
+    "grunt-contrib-jshint": "latest",
+    "jshint-stylish": "latest",
+    "grunt-contrib-uglify": "latest",
+    "grunt-contrib-cssmin": "latest",
+    "grunt-contrib-watch": "latest",
+    "grunt-exec": "^1.0.1"
+  }
+}
