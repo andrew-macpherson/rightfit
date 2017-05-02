@@ -5,10 +5,9 @@
   },
   "rightfit": {
     "host": "localhost",
-    "port": 3306,
-    "url": "mysql://root:@localhost/rightfit",
+    "port": 8889,
     "database": "rightfit",
-    "password": "",
+    "password": "root",
     "name": "rightfit",
     "user": "root",
     "connector": "mysql"
