@@ -12,11 +12,39 @@ module.exports = function(grunt) {
     // get the configuration info from package.json ----------------------------
     // this way we can use things like name and version (pkg.name)
     pkg: grunt.file.readJSON('package.json'),
+    banner: '/*! <%= pkg.name %> - v<%= pkg.version %> */\n',
 
     // OTHER VARIABLES
     target: grunt.option('target') || 'local',
 
     // all of our configuration will go here
+
+    copy: {
+        all: {
+            files: [
+                { cwd: 'src/pages/', src: '**', dest: 'www/pages/', expand: true },
+                { cwd: 'src/lib/', src: '**', dest: 'www/lib/', expand: true },
+                { cwd: 'src/img/', src: '**', dest: 'www/img/', expand: true },
+                { cwd: 'src/', src: 'index.html', dest: 'www/', expand: true }
+            ]
+        }
+    },
+
+    concat: {
+        options: {
+            banner: '<%= banner %>',
+            stripBanners: true
+        },
+        app: {
+            src: [ 'src/js/app.js',
+                   'src/pages/*.js'],
+            dest: 'www/js/app.js'
+        },
+        app_css: {
+            src: ['src/css/*.css'],
+            dest: 'www/css/app.css'
+        }
+    },
 
     exec: {
           options: {
@@ -53,10 +81,13 @@ module.exports = function(grunt) {
   // make sure you have run npm install so our app can find these
 
   grunt.loadNpmTasks('grunt-exec');
+  grunt.loadNpmTasks('grunt-contrib-copy');
   grunt.loadNpmTasks('grunt-contrib-jshint');
   grunt.loadNpmTasks('grunt-contrib-uglify');
   grunt.loadNpmTasks('grunt-contrib-cssmin');
   grunt.loadNpmTasks('grunt-contrib-watch');
+  grunt.loadNpmTasks('grunt-contrib-concat');
+
 
 
   grunt.registerTask('init', function() {
@@ -66,7 +97,7 @@ module.exports = function(grunt) {
 
 
   // Tasks
-  grunt.registerTask( 'browser',  [ 'init', 'exec:run_browser' ]);
-  grunt.registerTask( 'android',  [ 'init', 'exec:run_android' ]);
+  grunt.registerTask( 'browser',  [ 'init', 'copy:all', 'concat' , 'exec:run_browser' ]);
+  grunt.registerTask( 'android',  [ 'init', 'copy:all', 'concat', 'exec:run_android' ]);
 
 };
