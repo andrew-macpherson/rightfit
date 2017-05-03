@@ -28,6 +28,9 @@ node_modules
 # Mac
 .DS_Store
 
+# app build
+app/www/
+
 # iOS
 app/platforms/ios/build/
 app/platforms/ios/www/
