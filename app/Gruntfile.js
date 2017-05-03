@@ -65,9 +65,8 @@ module.exports = function(grunt) {
   });
 
 
-// Tasks
-grunt.registerTask( 'browser',  [ 'init', 'exec:run_browser' ]);
-grunt.registerTask( 'android',  [ 'init', 'exec:run_android' ]);
-
+  // Tasks
+  grunt.registerTask( 'browser',  [ 'init', 'exec:run_browser' ]);
+  grunt.registerTask( 'android',  [ 'init', 'exec:run_android' ]);
 
 };
