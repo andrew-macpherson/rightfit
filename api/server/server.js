@@ -2,6 +2,7 @@
 
 var loopback = require('loopback');
 var boot = require('loopback-boot');
+var bodyParser = require('body-parser');
 
 var app = module.exports = loopback();
 

@@ -3,7 +3,7 @@ module.exports = function(app) {
 /// UPDATE ALL DATABASE TABLES TO DB 
 //// @todo: find way to automate this 
 
-	app.dataSources.rightfit.autoupdate('User', function(err) {
+	app.dataSources.rightfit.autoupdate('user', function(err) {
 		if (err) throw err;
 	});
 

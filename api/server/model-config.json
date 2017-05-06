@@ -14,7 +14,8 @@
     ]
   },
   "User": {
-    "dataSource": "rightfit"
+    "dataSource": "rightfit",
+    "public": false
   },
   "AccessToken": {
     "dataSource": "rightfit",
@@ -34,6 +35,13 @@
   "Role": {
     "dataSource": "rightfit",
     "public": false
+  },
+  "user": {
+    "dataSource": "rightfit",
+    "public": true,
+    "options": {
+      "emailVerificationRequired": false
+    }
   },
   "Program": {
     "dataSource": "rightfit",
