@@ -33,7 +33,7 @@ rightFit.Pages.Register = (function() {
 				console.log(data);
 				console.log(xhr);
 				console.log(status);
-				rightFit.Pages.Index.login();
+				rightFit.Pages.Index.login(formData.email,formData.password);
 			}
 		});
 
