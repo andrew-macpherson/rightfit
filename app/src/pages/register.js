@@ -1,4 +1,4 @@
-rightFit.Pages.Register = (function() {	
+rightFit.Pages.Register = (function() {
 
 	function init() {
 		console.log('registration init');
@@ -33,15 +33,9 @@ rightFit.Pages.Register = (function() {
 				console.log(data);
 				console.log(xhr);
 				console.log(status);
-				alert();
-			},
-			success: function(data, status){
-				console.log('success');
-				console.log(data);
-				console.log(status);
+				rightFit.Pages.Index.login();
 			}
 		});
-
 
 	}
 
