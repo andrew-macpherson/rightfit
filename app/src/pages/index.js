@@ -41,6 +41,10 @@ rightFit.Pages.Index = (function(){
 				console.log(data);
 				console.log(xhr);
 				console.log(status);
+
+				mainView.router.loadPage('pages/dashboard.html');
+				console.log('loading page');
+
 			}
 		});
 

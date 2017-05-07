@@ -13,14 +13,22 @@ module.exports = function(app) {
 	    }
 
 	    res.json({'success':true,'accessToken':token.id});
-	    /*
-	    res.render('home', { //login user and render 'home' view
-	      email: req.body.email,
-	      accessToken: token.id
-	    });
-	    */
-
 	  });
 	});
+
+
+	//log a user out
+	app.get('/logout', function(req, res, next) {
+	  if (!req.accessToken){
+		return res.sendStatus(401); //return 401:unauthorized if accessToken is not present
+	  }
+	  User.logout(req.accessToken.id, function(err) {
+	    if (err){
+			res.json({'success':false,'error':err});
+	    }
+	    res.json({'success':true});
+	  });
+	});
+
 
 }
