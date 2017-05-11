@@ -37,7 +37,9 @@ module.exports = function(grunt) {
         },
         app: {
             src: [ 'src/js/app.js',
-                   'src/pages/*.js'],
+                    'src/app/*.js',
+                   'src/pages/*.js'
+                 ],
             dest: 'www/js/app.js'
         },
         app_css: {
@@ -70,6 +72,13 @@ module.exports = function(grunt) {
               stdout:true,
               stderror:true
           }
+      },
+      
+      watch: {
+        scripts: {
+          files: ['src/**'],
+          tasks: ['browser']
+        }
       }
 
   });
@@ -99,5 +108,6 @@ module.exports = function(grunt) {
   // Tasks
   grunt.registerTask( 'browser',  [ 'init', 'copy:all', 'concat' , 'exec:run_browser' ]);
   grunt.registerTask( 'android',  [ 'init', 'copy:all', 'concat', 'exec:run_android' ]);
+  grunt.registerTask( 'watch' , [ 'watch' ]);
 
 };

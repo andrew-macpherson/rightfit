@@ -10,3 +10,15 @@ var $$ = Dom7;
 var mainView = app.addView('.view-main', {
     dynamicNavbar: true
 });
+
+
+$$('#logOut').on( 'click', logOutHandler );
+function logOutHandler(){
+	rightFit.User.logOut()
+	.then(function(result){
+		mainView.router.loadPage('index.html');
+	})
+	.catch( function( err ) {
+        alert(err);
+    });
+}

@@ -3,6 +3,8 @@ rightFit.Pages.Dashboard = (function(){
 	function init() {
 		console.log('dashboard init');
 		
+		rightFit.User.checkLogin();
+
 		app.onPageInit( 'dashboard', function( page ) {
 		    //$$('#loginFormSubmit').on( 'click', loginHandler );
 		}).trigger();
@@ -12,10 +14,11 @@ rightFit.Pages.Dashboard = (function(){
 		});
 	}
 
+
 	function loginHandler(){
 		var formData = app.formToData('#loginForm');
 		console.log(formData);
-		login(formData.email,formData.password);
+		rightFit.Pages.Index.login(formData.email,formData.password);
 	}
 
 	return{
