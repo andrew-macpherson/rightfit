@@ -1,31 +1,28 @@
 rightFit.Pages.Dashboard = (function(){
 
+	var calendarDefault;
+
 	function init() {
 		console.log('dashboard init');
 		
 		rightFit.User.checkLogin();
 
 		app.onPageInit( 'dashboard', function( page ) {
-		    //$$('#loginFormSubmit').on( 'click', loginHandler );
+		    //$$('#currentDay').on( 'click', calendarOpen );
 
 		    ///CALENDAR 
-		    var calendarDefault = app.calendar({
-			    input: '#currentDay',
-			});          
-
+		    setTimeout(function(){
+				calendarDefault = app.calendar({
+				    input: '#currentDay'
+				});
+		    },1000);		
 
 		}).trigger();
 
 		app.onPageBeforeRemove( 'dashboard', function( page ) {
-		    //$$('#loginFormSubmit').off( 'click', loginHandler );
+		    //$$('#currentDay').off( 'click', calendarOpen );
 		});
-	}
 
-
-	function loginHandler(){
-		var formData = app.formToData('#loginForm');
-		console.log(formData);
-		rightFit.Pages.Index.login(formData.email,formData.password);
 	}
 
 	return{
