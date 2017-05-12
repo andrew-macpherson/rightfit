@@ -73,13 +73,33 @@ module.exports = function(grunt) {
               stderror:true
           }
       },
-      
+
       watch: {
         scripts: {
           files: ['src/**'],
-          tasks: ['browser']
+          tasks: ['default']
+        },
+        livereload: {
+            files: ['www/**'],
+            options: {
+                livereload: true,
+                spawn: true
+            }
+            // tasks: ['exec:prepare']
         }
-      }
+      },
+      connect: {
+          server: {
+            options: {
+              port: 8000,
+              base: 'www',
+              hostname: '0.0.0.0',
+              protocol: 'http',
+              livereload: true,
+              open: true
+            }
+          }
+        }
 
   });
 
@@ -96,6 +116,8 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-cssmin');
   grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('grunt-contrib-concat');
+  grunt.loadNpmTasks('grunt-contrib-connect');
+
 
 
 
@@ -106,8 +128,9 @@ module.exports = function(grunt) {
 
 
   // Tasks
+  grunt.registerTask( 'default',  [ 'init', 'copy:all', 'concat' ]);
+  grunt.registerTask( 'serve',    ['connect', 'watch']);
   grunt.registerTask( 'browser',  [ 'init', 'copy:all', 'concat' , 'exec:run_browser' ]);
   grunt.registerTask( 'android',  [ 'init', 'copy:all', 'concat', 'exec:run_android' ]);
-  grunt.registerTask( 'watch' , [ 'watch' ]);
 
 };

@@ -7,6 +7,13 @@ rightFit.Pages.Dashboard = (function(){
 
 		app.onPageInit( 'dashboard', function( page ) {
 		    //$$('#loginFormSubmit').on( 'click', loginHandler );
+
+		    ///CALENDAR 
+		    var calendarDefault = app.calendar({
+			    input: '#currentDay',
+			});          
+
+
 		}).trigger();
 
 		app.onPageBeforeRemove( 'dashboard', function( page ) {
