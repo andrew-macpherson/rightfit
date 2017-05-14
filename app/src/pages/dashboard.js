@@ -9,7 +9,7 @@ rightFit.Pages.Dashboard = (function(){
 		rightFit.User.checkLogin();
 
 		app.onPageBeforeInit( 'dashboard', function( page ) {
-			console.log('dashboard init');
+			console.log('dashboard onPageBeforeInit');
 		   
 		    ///CALENDAR 
 		    currentDate = moment().format('YYYY-MM-DD');
@@ -33,8 +33,7 @@ rightFit.Pages.Dashboard = (function(){
 	function setDateYesterday(e){
 		e.preventDefault();
 
-		console.log('set yesterdays date');
-		currentDate = moment(currentDate, "DD-MM-YYYY").add(1, 'days');
+		currentDate = moment(currentDate, "YYYY-MM-DD").add(1, 'days');
 		dateCalendar.setValue([currentDate]);
 	}
 
@@ -42,7 +41,7 @@ rightFit.Pages.Dashboard = (function(){
 		e.preventDefault();
 
 		console.log('set tomorrows date');
-		currentDate = moment(currentDate, "DD-MM-YYYY").add(1, 'days');
+		currentDate = moment(currentDate, "YYYY-MM-DD").add(1, 'days');
 	    dateCalendar.setValue([currentDate]);
 	}
 
