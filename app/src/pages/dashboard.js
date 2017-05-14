@@ -1,28 +1,39 @@
 rightFit.Pages.Dashboard = (function(){
 
-	var calendarDefault;
+	var dateCalendar;
 
-	function init() {
-		console.log('dashboard init');
-		
+	function init() {		
 		rightFit.User.checkLogin();
 
 		app.onPageInit( 'dashboard', function( page ) {
-		    //$$('#currentDay').on( 'click', calendarOpen );
+		    $$('#dateYesterday').on( 'click', setDateYesterday );
+		    $$('#dateTomorrow').on( 'click', setDateTomorrow );
 
 		    ///CALENDAR 
+		    var today = moment().format('YYYY-MM-DD');
+
 		    setTimeout(function(){
-				calendarDefault = app.calendar({
+				dateCalendar = app.calendar({
 				    input: '#currentDay'
 				});
-		    },1000);		
+				//dateCalendar.setValue([today]);
+		    },2000);		
 
 		}).trigger();
 
 		app.onPageBeforeRemove( 'dashboard', function( page ) {
-		    //$$('#currentDay').off( 'click', calendarOpen );
+		    $$('#dateYesterday').off( 'click', setDateYesterday );
+		    $$('#dateTomorrow').off( 'click', setDateTomorrow );
 		});
 
+	}
+
+	function setDateYesterday(){
+
+	}
+	
+	function setDateTomorrow(){
+		
 	}
 
 	return{
