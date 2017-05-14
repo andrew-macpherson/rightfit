@@ -7,9 +7,11 @@ rightFit.User = (function(){
 			var access_token = localStorage.getItem("access_token");
 
 			if(access_token && access_token != '' && access_token != undefined){
-				mainView.router.loadPage('pages/dashboard.html');
+				//mainView.router.loadPage('pages/dashboard.html');
+				rightFit.Router.goPage('dashboard');
 			}else{
-				mainView.router.loadPage('pages/index.html');
+				mainView.router.loadPage('index.html');
+				//rightFit.Router.goPage('index');
 			}
 		},
 

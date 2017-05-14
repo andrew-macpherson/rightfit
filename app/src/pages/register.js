@@ -1,10 +1,10 @@
 rightFit.Pages.Register = (function() {
 
 	function init() {
-		console.log('registration init');
-		app.onPageInit( 'register', function( page ) {
+		app.onPageBeforeInit( 'register', function( page ) {
+			console.log('register init');
 		    $$('#registrationFormSubmit').on( 'click', registerHandler );
-		}).trigger();
+		});
 
 		app.onPageBeforeRemove( 'register', function( page ) {
 		    $$('#registrationFormSubmit').off( 'click', registerHandler );

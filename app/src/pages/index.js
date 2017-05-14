@@ -1,16 +1,15 @@
 rightFit.Pages.Index = (function(){
 
 	function init() {
-		console.log('index init');
-
 		///CHECK LOGIN
 		rightFit.User.checkLogin();
 
-		app.onPageInit( 'register', function( page ) {
+		app.onPageBeforeInit( 'index', function( page ) {
+			console.log('index init');
 		    $$('#loginFormSubmit').on( 'click', loginHandler );
-		}).trigger();
+		});
 
-		app.onPageBeforeRemove( 'register', function( page ) {
+		app.onPageBeforeRemove( 'index', function( page ) {
 		    $$('#loginFormSubmit').off( 'click', loginHandler );
 		});
 	}
@@ -25,7 +24,14 @@ rightFit.Pages.Index = (function(){
 
 		rightFit.User.login(email,password)
 		.then(function(result){
-			mainView.router.loadPage('pages/dashboard.html');
+			//mainView.router.loadPage('pages/dashboard.html');
+			rightFit.Router.goPage('dashboard');
+			/*
+			mainView.router.load({
+				content: 'pages/dashboard.html',
+				animatePages: true
+			});
+			*/
 		})
 		.catch( function( err ) {
             alert(err);
