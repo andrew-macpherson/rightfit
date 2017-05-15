@@ -1,0 +1,36 @@
+body{
+	font-weight: 300;
+}
+
+.card-content table{
+	width: 100%;
+	border-collapse: collapse;
+}
+
+.card-content table th{
+	padding: 10px;
+	color: #8e8e93;
+	font-weight: 300;
+}
+
+.card-content table td{
+	padding: 10px;
+	border-top: 1px solid #f1f1f1;
+	font-weight: 300;
+}
+
+.card-content table tr{
+	
+}
+
+
+.label-cell{
+	text-align: left;
+}
+.numeric-cell{
+    text-align: right;
+}
+
+.addActivity{
+	font-size: 14px;
+}
