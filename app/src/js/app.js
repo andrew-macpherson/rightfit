@@ -1,7 +1,7 @@
 rightFit = {};
 rightFit.Pages = {};
 
-var app = new Framework7();
+var app = new Framework7({template7Pages:true});
 
 // Export selectors engine
 var $$ = Dom7;
