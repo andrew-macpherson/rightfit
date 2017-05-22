@@ -24,8 +24,14 @@ module.exports = function(app) {
 	});
 
 
-	app.dataSources.rightfit.autoupdate('Program', function(err) {
+	app.dataSources.rightfit.autoupdate('exercise', function(err) {
 		if (err) throw err;
 	});
+
+	app.dataSources.rightfit.autoupdate('exerciseCategories', function(err) {
+		if (err) throw err;
+	});
+
+	
 
 };

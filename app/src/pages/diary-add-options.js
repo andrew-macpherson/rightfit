@@ -26,10 +26,12 @@ rightFit.Pages.DiaryAddOptions = (function(){
             	data.includeTime = true;
             	data.includeSet = true;
             	data.includeReps = false;
+            	data.includeWeight = false;
             }else{
             	data.includeTime = false;
             	data.includeSet = true;
             	data.includeReps = true;
+            	data.includeWeight = true;
             }
 
 	        resolve(data);

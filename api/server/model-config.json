@@ -43,7 +43,11 @@
       "emailVerificationRequired": false
     }
   },
-  "Program": {
+  "exercise": {
+    "dataSource": "rightfit",
+    "public": true
+  },
+  "exerciseCategories": {
     "dataSource": "rightfit",
     "public": true
   }
