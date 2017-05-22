@@ -25,7 +25,7 @@ rightFit.Pages.Index = (function(){
 		rightFit.User.login(email,password)
 		.then(function(result){
 			//mainView.router.loadPage('pages/dashboard.html');
-			rightFit.Router.goPage('dashboard');
+			rightFit.Router.goPage('dashboard.html');
 			/*
 			mainView.router.load({
 				content: 'pages/dashboard.html',

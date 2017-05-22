@@ -21,6 +21,8 @@ rightFit.Pages.Dashboard = (function(){
 
 		    $$('.dateYesterday').on( 'click', setDateYesterday );
 		    $$('.dateTomorrow').on( 'click', setDateTomorrow );
+
+		    $$('.addDiary').on('click',addToDiary);
 				
 			dateCalendar = app.calendar({
 			    input: '#currentDay'
@@ -32,6 +34,8 @@ rightFit.Pages.Dashboard = (function(){
 			console.log('dashboard off');
 		    $$('.dateYesterday').off( 'click', setDateYesterday );
 		    $$('.dateTomorrow').off( 'click', setDateTomorrow );
+
+		    $$('.addDiary').off('click',addToDiary);
 		});
 
 	}
@@ -51,15 +55,23 @@ rightFit.Pages.Dashboard = (function(){
 	    dateCalendar.setValue([currentDate]);
 	}
 
+	function addToDiary(){
+		var category = $$(this).data('category');
+		console.log(category);
+
+		rightFit.Router.goPage('diary-add.html',{category:category});
+
+	}
+
 
 	function getData(){
 		return new Promise( function( resolve, reject ) {
 
-			var activities = {
+			var data = {
                 activities: {
                     cardio: {
                         0: {
-                            name: 'Sprint',
+                            name: 'Jog',
                             time: '10 min'
                         },
                         1: {
@@ -69,11 +81,26 @@ rightFit.Pages.Dashboard = (function(){
                     },
                     abs: {
                         
+                    },
+                    arms: {
+                        
+                    },
+                    back: {
+                        
+                    },
+                    chest: {
+                        
+                    },
+                    legs: {
+                        
+                    },
+                    shoulders: {
+                        
                     }
                 }
             }
 
-	        resolve(activities);
+	        resolve(data);
 
         });
 	}

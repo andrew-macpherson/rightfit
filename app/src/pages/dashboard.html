@@ -2,21 +2,22 @@
 <!-- Top Navbar-->
 <div class="navbar">
     <div class="navbar-inner">
-        <div class="left">
+        
+        <div class="center sliding">Dashboard</div>
+        <div class="right">
             <a href="#" class="link icon-only open-panel"> <i class="icon icon-bars"></i></a>
         </div>
-        <div class="center sliding">Dashboard</div>
     </div>
 </div>
 <!-- Pages, because we need fixed-through navbar and toolbar, it has additional appropriate classes-->
 <div class="pages navbar-through toolbar-through">
     <!-- Page, data-page contains page name-->
-    <div data-page="dashboard" ng-controller="vm as dashboardController" class="page">
+    <div data-page="dashboard" class="page">
 
         <!-- Scrollable page content-->
-        <div class="page-content">
+        <div class="page-content withCalendarBlock">
 
-            <div class="list-block">
+            <div class="list-block calendarBlock">
               <ul>
                 <li>
                   <div class="item-content" style="padding-right: 15px">
@@ -40,7 +41,7 @@
               </ul>
             </div>
 
-            <div class="content-block-title">Cardio</div>
+            <div class="content-block-title firstBlockAfterCalendar">Cardio</div>
             <div class="card">
                 <div class="card-content">
                     <div class="">
@@ -54,8 +55,8 @@
                             <tbody id="cardioActivities">
                             {{#each activities.cardio}}
                                 <tr>
-                                    <td class="label-cell">Sprint</td>
-                                    <td class="numeric-cell">10 min</td>
+                                    <td class="label-cell">{{name}}</td>
+                                    <td class="numeric-cell">{{time}}</td>
                                 </tr>
                             {{/each}}
                             </tbody>
@@ -63,79 +64,169 @@
                     </div>
                 </div>
                 <div class="card-footer">
-                    <a href="#"><i class="f7-icons addActivity">add</i> Add</a>
+                    <a class="addDiary" data-category="cardio" href="#"><i class="f7-icons addActivity">add</i> Add</a>
                 </div>
             </div>
 
             <div class="content-block-title">Abs</div>
             <div class="card">
                 <div class="card-content">
-                    <div class="card-content-inner">
-
+                    <div class="">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th class="label-cell">Exercise</th>
+                                    <th class="numeric-cell">Time</th>
+                                </tr>
+                            </thead>
+                            <tbody id="cardioActivities">
+                            {{#each activities.abs}}
+                                <tr>
+                                    <td class="label-cell">{{name}}</td>
+                                    <td class="numeric-cell">{{time}}</td>
+                                </tr>
+                            {{/each}}
+                            </tbody>
+                        </table>
                     </div>
                 </div>
                 <div class="card-footer">
-                    <a href="#"><i class="f7-icons addActivity">add</i> Add</a>
+                    <a class="addDiary" data-category="abs" href="#"><i class="f7-icons addActivity">add</i> Add</a>
                 </div>
             </div>
 
             <div class="content-block-title">Arms</div>
             <div class="card">
                 <div class="card-content">
-                    <div class="card-content-inner">
-
+                    <div class="">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th class="label-cell">Exercise</th>
+                                    <th class="numeric-cell">Time</th>
+                                </tr>
+                            </thead>
+                            <tbody id="cardioActivities">
+                            {{#each activities.arms}}
+                                <tr>
+                                    <td class="label-cell">{{name}}</td>
+                                    <td class="numeric-cell">{{time}}</td>
+                                </tr>
+                            {{/each}}
+                            </tbody>
+                        </table>
                     </div>
                 </div>
                 <div class="card-footer">
-                    <a href="#"><i class="f7-icons addActivity">add</i> Add</a>
+                    <a class="addDiary" data-category="arms" href="#"><i class="f7-icons addActivity">add</i> Add</a>
                 </div>
             </div>
 
             <div class="content-block-title">Back</div>
             <div class="card">
                 <div class="card-content">
-                    <div class="card-content-inner">
-
+                    <div class="">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th class="label-cell">Exercise</th>
+                                    <th class="numeric-cell">Time</th>
+                                </tr>
+                            </thead>
+                            <tbody id="cardioActivities">
+                            {{#each activities.back}}
+                                <tr>
+                                    <td class="label-cell">{{name}}</td>
+                                    <td class="numeric-cell">{{time}}</td>
+                                </tr>
+                            {{/each}}
+                            </tbody>
+                        </table>
                     </div>
                 </div>
                 <div class="card-footer">
-                    <a href="#"><i class="f7-icons addActivity">add</i> Add</a>
+                    <a class="addDiary" data-category="back" href="#"><i class="f7-icons addActivity">add</i> Add</a>
                 </div>
             </div>
 
             <div class="content-block-title">Chest</div>
             <div class="card">
                 <div class="card-content">
-                    <div class="card-content-inner">
-
+                    <div class="">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th class="label-cell">Exercise</th>
+                                    <th class="numeric-cell">Time</th>
+                                </tr>
+                            </thead>
+                            <tbody id="cardioActivities">
+                            {{#each activities.chest}}
+                                <tr>
+                                    <td class="label-cell">{{name}}</td>
+                                    <td class="numeric-cell">{{time}}</td>
+                                </tr>
+                            {{/each}}
+                            </tbody>
+                        </table>
                     </div>
                 </div>
                 <div class="card-footer">
-                    <a href="#"><i class="f7-icons addActivity">add</i> Add</a>
+                    <a class="addDiary" data-category="chest" href="#"><i class="f7-icons addActivity">add</i> Add</a>
                 </div>
             </div>
 
             <div class="content-block-title">Legs</div>
             <div class="card">
                 <div class="card-content">
-                    <div class="card-content-inner">
-
+                    <div class="">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th class="label-cell">Exercise</th>
+                                    <th class="numeric-cell">Time</th>
+                                </tr>
+                            </thead>
+                            <tbody id="cardioActivities">
+                            {{#each activities.legs}}
+                                <tr>
+                                    <td class="label-cell">{{name}}</td>
+                                    <td class="numeric-cell">{{time}}</td>
+                                </tr>
+                            {{/each}}
+                            </tbody>
+                        </table>
                     </div>
                 </div>
                 <div class="card-footer">
-                    <a href="#"><i class="f7-icons addActivity">add</i> Add</a>
+                    <a class="addDiary" data-category="legs" href="#"><i class="f7-icons addActivity">add</i> Add</a>
                 </div>
             </div>
 
             <div class="content-block-title">Shoulders</div>
             <div class="card">
                 <div class="card-content">
-                    <div class="card-content-inner">
-
+                    <div class="">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th class="label-cell">Exercise</th>
+                                    <th class="numeric-cell">Time</th>
+                                </tr>
+                            </thead>
+                            <tbody id="cardioActivities">
+                            {{#each activities.shoulders}}
+                                <tr>
+                                    <td class="label-cell">{{name}}</td>
+                                    <td class="numeric-cell">{{time}}</td>
+                                </tr>
+                            {{/each}}
+                            </tbody>
+                        </table>
                     </div>
                 </div>
                 <div class="card-footer">
-                    <a href="#"><i class="f7-icons addActivity">add</i> Add</a>
+                    <a class="addDiary" data-category="shoulders" href="#"><i class="f7-icons addActivity">add</i> Add</a>
                 </div>
             </div>
 

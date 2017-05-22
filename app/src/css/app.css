@@ -34,3 +34,23 @@ body{
 .addActivity{
 	font-size: 14px;
 }
+
+.list-block.calendarBlock{
+	margin-top:0px;
+	position: fixed;
+	width: 100%
+}
+
+.content-block-title{
+	margin: 25px 15px 10px;
+}
+
+.firstBlockAfterCalendar{
+	margin-top: 70px;
+}
+
+
+
+.item-content a{
+	width: 100%;
+}

@@ -8,7 +8,7 @@ rightFit.User = (function(){
 
 			if(access_token && access_token != '' && access_token != undefined){
 				//mainView.router.loadPage('pages/dashboard.html');
-				rightFit.Router.goPage('dashboard');
+				rightFit.Router.goPage('dashboard.html');
 			}else{
 				mainView.router.loadPage('index.html');
 				//rightFit.Router.goPage('index');
