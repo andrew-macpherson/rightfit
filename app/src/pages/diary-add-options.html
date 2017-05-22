@@ -8,7 +8,7 @@
                 <span class="">Back</span>
             </a>
         </div>
-        <div class="center sliding">Add to Diary</div>
+        <div class="center sliding">Add to Diary Options</div>
         <div class="right">
             <a href="#" class="link icon-only open-panel"> <i class="icon icon-bars"></i></a>
         </div>
@@ -17,38 +17,61 @@
 <!-- Pages, because we need fixed-through navbar and toolbar, it has additional appropriate classes-->
 <div class="pages navbar-through toolbar-through">
     <!-- Page, data-page contains page name-->
-    <div data-page="diary-add" class="page">
+    <div data-page="diary-add-options" class="page">
 
         <!-- Scrollable page content-->
         <div class="page-content">
 
-            <form data-search-list=".list-block-search" data-search-in=".item-title" class="searchbar searchbar-init">
-                <div class="searchbar-input">
-                    <input type="search" placeholder="Search {{category}}"><a href="#" class="searchbar-clear"></a>
-                </div>
-                <a href="#" class="searchbar-cancel">Cancel</a>
-            </form>
-
             <div class="content-block-title">{{category}}</div>
 
-            <div class="list-block media-list list-block-search ">
+            <div class="list-block">
                 <ul>
-                    {{#each activities}}
-                    <li class="item-content">
-                        <a href="#" class="item-link item-content">
-                            <div class="item-media"><img src="{{image}}" width="44"></div>
+                    {{#if includeSet}}
+                    <li>
+                        <div class="item-content">
                             <div class="item-inner">
-                                <div class="item-title-row">
-                                    <div class="item-title">{{name}}</div>
+                                <div class="item-title label">Set</div>
+                                <div class="item-input">
+                                    <input type="number" placeholder="Set">
                                 </div>
-                                <div class="item-subtitle">{{description}}</div>
                             </div>
-                        </a>
+                        </div>
                     </li>
-                    {{/each}}
+                    {{/if}}
+
+                    {{#if includeReps}}
+                    <li>
+                        <div class="item-content">
+                            <div class="item-inner">
+                                <div class="item-title label">Reps</div>
+                                <div class="item-input">
+                                    <input type="number" placeholder="Reps">
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    {{/if}}
+
+                    {{#if includeTime}}
+                    <li>
+                        <div class="item-content">
+                            <div class="item-inner">
+                                <div class="item-title label">Time</div>
+                                <div class="item-input">
+                                    <input type="number" placeholder="Time (Minutes)">
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    {{/if}}
+
                 </ul>
-            </div>
+            </div>     
             
+            <div class="content-block">
+              <p><a href="#" id="diaryAddOptionsSubmit" class="button get-storage-data">Add Exercise</a></p>
+            </div>
+
 
         </div>
     </div>

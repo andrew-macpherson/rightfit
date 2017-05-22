@@ -43,12 +43,20 @@ rightFit.Router = (function(){
                         console.log( 'error going to page ' + page );
                         console.log(err);
                     });
+                }else if(page == 'diary-add-options.html'){
+                    rightFit.Pages.DiaryAddOptions.getData(params.category)
+                    .then( function( data ) {
+                        options.context = data;
+                        mainView.router.load( options );
+                    })
+                    .catch( function( err ) {
+                        console.log( 'error going to page ' + page );
+                        console.log(err);
+                    });
                 }else{
                     //options.reload = true;
                     mainView.router.load( options );
                 }
-
-                
 
                 
 		}

@@ -1,16 +1,14 @@
-rightFit.Pages.DiaryAdd = (function(){
+rightFit.Pages.DiaryAddOptions = (function(){
 	'use strict';
 
 	function init() {
 
-		var category;
-
-		app.onPageBeforeInit( 'diary-add', function( page ) {
-			console.log('Diary Add onPageBeforeInit');
+		app.onPageBeforeInit( 'diary-add-options', function( page ) {
+			console.log('Diary Add Options onPageBeforeInit');
 
 		});
 
-		app.onPageBeforeRemove( 'diary-add', function( page ) {
+		app.onPageBeforeRemove( 'diary-add-options', function( page ) {
 
 		});
 
@@ -18,28 +16,20 @@ rightFit.Pages.DiaryAdd = (function(){
 
 
 	function getData(category){
-
 		return new Promise( function( resolve, reject ) {
 
 			var data = {
-				category: category,
-				activities: {
-	                0: {
-	                    name: 'Jog',
-	                    description: 'A light run',
-	                    image: 'img/standing-bicep-dumbbell-curl-photo.jpg'
-	                },
-	                1: {
-	                    name: 'Sprint',
-	                    description: 'running really really fast',
-	                    image: 'img/standing-bicep-dumbbell-curl-photo.jpg'
-	                },
-	                2: {
-	                    name: 'Stair Master',
-	                    description: 'walking up stairs',
-	                    image: 'img/standing-bicep-dumbbell-curl-photo.jpg'
-	                }
-                }
+				category: category
+            }
+
+            if(category == 'cardio'){
+            	data.includeTime = true;
+            	data.includeSet = true;
+            	data.includeReps = false;
+            }else{
+            	data.includeTime = false;
+            	data.includeSet = true;
+            	data.includeReps = true;
             }
 
 	        resolve(data);
@@ -54,4 +44,4 @@ rightFit.Pages.DiaryAdd = (function(){
 
 })();
 
-rightFit.Pages.DiaryAdd.init();
+rightFit.Pages.DiaryAddOptions.init();

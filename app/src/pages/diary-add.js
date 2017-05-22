@@ -8,12 +8,21 @@ rightFit.Pages.DiaryAdd = (function(){
 		app.onPageBeforeInit( 'diary-add', function( page ) {
 			console.log('Diary Add onPageBeforeInit');
 
+			$$('.addDiaryOptions').on('click',addToDiaryOptions);
+
 		});
 
 		app.onPageBeforeRemove( 'diary-add', function( page ) {
-
+			$$('.addDiaryOptions').off('click',addToDiaryOptions);
 		});
 
+	}
+
+	function addToDiaryOptions(){
+		var category = $$(this).data('category');
+		console.log(category);
+
+		rightFit.Router.goPage('diary-add-options.html',{category:category});
 	}
 
 
