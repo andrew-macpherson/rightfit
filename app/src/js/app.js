@@ -6,6 +6,10 @@ var app = new Framework7({template7Pages:true});
 // Export selectors engine
 var $$ = Dom7;
 
+// SET CURRENT DAY;
+var currentDate;
+currentDate = moment().format('YYYY-MM-DD');
+
 // Add view
 var mainView = app.addView('.view-main', {
     dynamicNavbar: true

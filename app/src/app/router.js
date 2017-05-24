@@ -44,7 +44,7 @@ rightFit.Router = (function(){
                         console.log(err);
                     });
                 }else if(page == 'diary-add-options.html'){
-                    rightFit.Pages.DiaryAddOptions.getData(params.category)
+                    rightFit.Pages.DiaryAddOptions.getData(params.category,params.exercise)
                     .then( function( data ) {
                         options.context = data;
                         mainView.router.load( options );

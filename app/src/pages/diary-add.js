@@ -20,9 +20,9 @@ rightFit.Pages.DiaryAdd = (function(){
 
 	function addToDiaryOptions(){
 		var category = $$(this).data('category');
-		console.log(category);
+		var exercise = $$(this).data('exercise');
 
-		rightFit.Router.goPage('diary-add-options.html',{category:category});
+		rightFit.Router.goPage('diary-add-options.html',{category:category,exercise:exercise});
 	}
 
 

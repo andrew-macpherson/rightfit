@@ -3,7 +3,6 @@ rightFit.Pages.Dashboard = (function(){
 
 	var dashboard;
 	var dateCalendar;
-	var currentDate;
 
 	//var activities;
 
@@ -16,8 +15,6 @@ rightFit.Pages.Dashboard = (function(){
 
 			console.log('dashboard onPageBeforeInit');
 		   
-		    ///CALENDAR 
-		    currentDate = moment().format('YYYY-MM-DD');
 
 		    $$('.dateYesterday').on( 'click', setDateYesterday );
 		    $$('.dateTomorrow').on( 'click', setDateTomorrow );
@@ -43,15 +40,14 @@ rightFit.Pages.Dashboard = (function(){
 	function setDateYesterday(e){
 		e.preventDefault();
 
-		currentDate = moment(currentDate, "YYYY-MM-DD").add(1, 'days');
+		currentDate = moment(currentDate).add(-1, 'days').format('YYYY-MM-DD');
 		dateCalendar.setValue([currentDate]);
 	}
 
 	function setDateTomorrow(e){
 		e.preventDefault();
 
-		console.log('set tomorrows date');
-		currentDate = moment(currentDate, "YYYY-MM-DD").add(1, 'days');
+		currentDate = moment(currentDate).add(1, 'days').format('YYYY-MM-DD');
 	    dateCalendar.setValue([currentDate]);
 	}
 

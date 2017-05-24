@@ -14,6 +14,22 @@
     "day": {
       "type": "date",
       "required": true
+    },
+    "set": {
+      "type": "number",
+      "required": false
+    },
+    "reps": {
+      "type": "number",
+      "required": false
+    },
+    "weight": {
+      "type": "number",
+      "required": false
+    },
+    "time": {
+      "type": "number",
+      "required": false
     }
   },
   "validations": [],
