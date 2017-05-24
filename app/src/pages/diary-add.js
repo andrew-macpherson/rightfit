@@ -30,28 +30,38 @@ rightFit.Pages.DiaryAdd = (function(){
 
 		return new Promise( function( resolve, reject ) {
 
-			var data = {
-				category: category,
-				activities: {
-	                0: {
-	                    name: 'Jog',
-	                    description: 'A light run',
-	                    image: 'img/standing-bicep-dumbbell-curl-photo.jpg'
-	                },
-	                1: {
-	                    name: 'Sprint',
-	                    description: 'running really really fast',
-	                    image: 'img/standing-bicep-dumbbell-curl-photo.jpg'
-	                },
-	                2: {
-	                    name: 'Stair Master',
-	                    description: 'walking up stairs',
-	                    image: 'img/standing-bicep-dumbbell-curl-photo.jpg'
-	                }
-                }
-            }
+			if(category == 'cardio'){
+				var categoryId = 1;
+			}else if(category == 'abs'){
+				var categoryId = 2;
+			}else if(category == 'arms'){
+				var categoryId = 3;
+			}else if(category == 'back'){
+				var categoryId = 4;
+			}else if(category == 'chest'){
+				var categoryId = 5;
+			}else if(category == 'legs'){
+				var categoryId = 6;
+			}else if(category == 'shoulders'){
+				var categoryId = 6;
+			}
 
-	        resolve(data);
+            $$.ajax({
+				url: 'http://localhost:3000/api/exerciseCategories/'+categoryId+'/exercises',
+				method: 'get',
+				dataType: 'json',
+				error: function(xhr, status){
+					reject( new Error( 'Could not log in.'));
+					return false;
+				},
+				success: function(data, status, xhr){
+					var returnData = {
+						category: category,
+						activities: data
+		            }
+					resolve(returnData);
+				}
+			});
 
         });
 	}

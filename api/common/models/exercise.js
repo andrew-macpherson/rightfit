@@ -1,5 +1,5 @@
 'use strict';
 
-module.exports = function(Program) {
+module.exports = function(Exercise) {
 
 };

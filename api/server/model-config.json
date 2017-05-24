@@ -47,7 +47,11 @@
     "dataSource": "rightfit",
     "public": true
   },
-  "exerciseCategories": {
+  "exerciseCategory": {
+    "dataSource": "rightfit",
+    "public": true
+  },
+  "userExercise": {
     "dataSource": "rightfit",
     "public": true
   }

@@ -1,6 +1,6 @@
 {
-  "name": "exercise",
-  "plural": "exercises",
+  "name": "exerciseCategory",
+  "plural": "exerciseCategories",
   "base": "PersistedModel",
   "idInjection": true,
   "options": {
@@ -14,18 +14,16 @@
     "description": {
       "type": "string",
       "required": true
-    },
-    "image": {
-      "type": "string",
-      "required": true
-    },
-    "category": {
-      "type": "number",
-      "required": true
     }
   },
   "validations": [],
-  "relations": {},
+  "relations": {
+    "exercises": {
+      "type": "hasMany",
+      "model": "exercise",
+      "foreignKey": "category"
+    }
+  },
   "acls": [],
   "methods": {}
 }

@@ -1,0 +1,23 @@
+{
+  "name": "userExercise",
+  "plural": "userExercises",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "exercise": {
+      "type": "number",
+      "required": true
+    },
+    "day": {
+      "type": "date",
+      "required": true
+    }
+  },
+  "validations": [],
+  "relations": {},
+  "acls": [],
+  "methods": {}
+}

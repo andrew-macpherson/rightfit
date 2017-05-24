@@ -28,10 +28,12 @@ module.exports = function(app) {
 		if (err) throw err;
 	});
 
-	app.dataSources.rightfit.autoupdate('exerciseCategories', function(err) {
+	app.dataSources.rightfit.autoupdate('exerciseCategory', function(err) {
 		if (err) throw err;
 	});
 
-	
+	app.dataSources.rightfit.autoupdate('userExercise', function(err) {
+		if (err) throw err;
+	});
 
 };
