@@ -7,6 +7,10 @@
     "validateUpsert": true
   },
   "properties": {
+    "userId": {
+      "type": "number",
+      "required": true
+    },
     "exercise": {
       "type": "number",
       "required": true
@@ -33,7 +37,13 @@
     }
   },
   "validations": [],
-  "relations": {},
+  "relations": {
+    "exercise": {
+      "type": "hasOne",
+      "model": "exercise",
+      "foreignKey": "id"
+    }
+  },
   "acls": [],
   "methods": {}
 }
