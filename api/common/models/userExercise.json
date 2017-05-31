@@ -17,7 +17,11 @@
     },
     "day": {
       "type": "date",
-      "required": true
+      "required": true,
+      "mysql": {
+        "columnName": "day",
+        "dataType": "date"
+      }
     },
     "set": {
       "type": "number",

@@ -10,9 +10,6 @@ rightFit.Pages.Dashboard = (function(){
 		//rightFit.User.checkLogin();
 
 		app.onPageBeforeInit( 'dashboard', function( page ) {
-			/// GET ACTIBITIES
-			//getActivities();
-
 			console.log('dashboard onPageBeforeInit');
 		   
 
@@ -53,50 +50,132 @@ rightFit.Pages.Dashboard = (function(){
 
 	function addToDiary(){
 		var category = $$(this).data('category');
-		console.log(category);
 
 		rightFit.Router.goPage('diary-add.html',{category:category});
-
 	}
 
 
 	function getData(){
 		return new Promise( function( resolve, reject ) {
 
-			var data = {
-                activities: {
-                    cardio: {
-                        0: {
-                            name: 'Jog',
-                            time: '10 min'
-                        },
-                        1: {
-                            name: 'Sprint',
-                            time: '10 min'
-                        }
-                    },
-                    abs: {
-                        
-                    },
-                    arms: {
-                        
-                    },
-                    back: {
-                        
-                    },
-                    chest: {
-                        
-                    },
-                    legs: {
-                        
-                    },
-                    shoulders: {
-                        
-                    }
-                }
-            }
+			console.log('{"where":{"userId":0,"day":"'+currentDate+'"},"include":["exercise"]}');
+			var startDate = moment(moment(currentDate).format('YYYY-MM-DD 00:00:00')).unix();
+			var endDate = moment(moment(currentDate).format('YYYY-MM-DD 23:59:59')).unix();
 
-	        resolve(data);
+			var query = {
+				where:{
+					userId: 0,
+					day: {
+						gte: startDate,
+						lte: endDate
+					}
+				},
+				include: ["exercise"]
+			}
+
+			console.log(JSON.stringify(query));
+
+			$$.ajax({
+				url: 'http://localhost:3000/api/userExercises',
+				method: 'get',
+				dataType: 'json',
+				data:JSON.stringify(query),
+				error: function(xhr, status){
+					console.log(xhr);
+					console.log(status);
+					reject( new Error( 'Error getting exercise.'));
+					return false;
+				},
+				success: function(data, status, xhr){
+
+					console.log(data);
+					
+					var cardio = [];
+					var abs = [];
+					var arms = [];
+					var back = [];
+					var chest = [];
+					var legs = [];
+					var shoulders = [];
+					
+					for(var i=0; i < data.length; i++){
+						console.log(data[i].exercise.category);
+						
+						if(data[i].exercise.category == 1){
+							cardio.push({
+								name: data[i].exercise.name,
+								time: data[i].time
+							});
+						}
+						if(data[i].exercise.category == 2){
+							abs.push({
+								name: data[i].exercise.name,
+								set: data[i].set,
+								reps: data[i].reps,
+								weight: data[i].weight
+							});
+						}
+						if(data[i].exercise.category == 3){
+							arms.push({
+								name: data[i].exercise.name,
+								set: data[i].set,
+								reps: data[i].reps,
+								weight: data[i].weight
+							});
+						}
+						if(data[i].exercise.category == 4){
+							back.push({
+								name: data[i].exercise.name,
+								set: data[i].set,
+								reps: data[i].reps,
+								weight: data[i].weight
+							});
+						}
+						if(data[i].exercise.category == 5){
+							chest.push({
+								name: data[i].exercise.name,
+								set: data[i].set,
+								reps: data[i].reps,
+								weight: data[i].weight
+							});
+						}
+						if(data[i].exercise.category == 6){
+							legs.push({
+								name: data[i].exercise.name,
+								set: data[i].set,
+								reps: data[i].reps,
+								weight: data[i].weight
+							});
+						}
+						if(data[i].exercise.category == 7){
+							shoulders.push({
+								name: data[i].exercise.name,
+								set: data[i].set,
+								reps: data[i].reps,
+								weight: data[i].weight
+							});
+						}
+						
+					}
+					
+					
+					var returnData = {
+	                activities: {
+	                    cardio: cardio,
+	                    abs: abs,
+	                    arms: arms,
+	                    back: back,
+	                    chest: chest,
+	                    legs: legs,
+	                    shoulders: shoulders
+	                }
+	            }
+
+		        resolve(returnData);
+				}
+			});
+
+			
 
         });
 	}
